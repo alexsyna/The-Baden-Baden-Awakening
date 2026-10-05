@@ -1,0 +1,468 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Baden-Baden Awakening</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: travel-brand scroll. Full-bleed scene, loud wide headlines, very few words,
+   a swipeable hotel reel, numbered route, FAQ accordion. Light and airy between the dark hero and reel. */
+:root{
+  --bg:#f4f7f4; --bg2:#e7eeea; --surface:#ffffff; --fg:#0f2221; --muted:#566b6a;
+  --accent:#0b6f75; --lamp:#b9621c; --line:#cdd9d4;
+  --ink:#0d2327; --ink2:#15373c; --on-ink:#f0f5f1; --on-ink-muted:#a9c2be; --aqua:#7ad6d2; --amber:#f3b56b;
+  --display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0b1b1f; --bg2:#0f262b; --surface:#143036; --fg:#ecf3ef; --muted:#9db6b3;
+  --accent:#7ad6d2; --lamp:#f3b56b; --line:#28474d; --ink:#07151a; --ink2:#123036; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0b1b1f; --bg2:#0f262b; --surface:#143036; --fg:#ecf3ef; --muted:#9db6b3;
+  --accent:#7ad6d2; --lamp:#f3b56b; --line:#28474d; --ink:#07151a; --ink2:#123036; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;line-height:.96;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h2{font-size:clamp(2.1rem,7vw,4.4rem)}
+h3{font-size:1.25rem;letter-spacing:0}
+p{margin:0;max-width:58ch}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+.band{padding-block:clamp(60px,9vw,112px)}
+.band.alt{background:var(--bg2)}
+.kicker{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lamp)}
+.head{display:flex;flex-direction:column;gap:14px;margin-bottom:38px}
+.lede{font-size:1.15rem;color:var(--muted)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:var(--on-ink)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+nav b{font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;white-space:nowrap}
+nav ul{display:flex;gap:4px 18px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}
+nav a{color:var(--on-ink);text-decoration:none;font-size:.86rem;font-weight:500;opacity:.85}
+nav a:hover{opacity:1;color:var(--amber)}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:590px;display:flex;align-items:flex-end;background:var(--ink);color:var(--on-ink)}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 45%;z-index:-3;animation:kb 36s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(-1.5%,1%)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#07151a66 0,#07151a33 35%,#07151ad9 100%),linear-gradient(90deg,#07151a99 0,transparent 70%)}
+.hero .fog{position:absolute;z-index:-2;left:-60%;top:8%;width:220%;height:46%;background:radial-gradient(closest-side,#f0f5f155,transparent 70%) 0 0/50% 100% repeat-x;animation:fog 60s linear infinite;pointer-events:none}
+.hero .fog.f2{top:34%;height:38%;opacity:.7;animation-duration:95s;animation-direction:reverse}
+@keyframes fog{to{transform:translateX(50%)}}
+.hero .wrap{width:100%;padding-block:120px 64px;display:flex;flex-direction:column;gap:22px}
+.hero .to{font-size:1.1rem;font-weight:500}
+.hero h1{font-size:clamp(2.7rem,11.5vw,8.2rem);line-height:.88;text-shadow:0 4px 40px #07151a}
+.hero h1 span{color:var(--amber);display:block}
+.hero .sub{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;max-width:none;text-shadow:0 1px 14px #07151a}
+.count{display:flex;gap:10px;flex-wrap:wrap}
+.count span{display:inline-block;min-width:1.3em;text-align:right}
+.count div{background:var(--on-ink);color:var(--ink);border-radius:999px;padding:9px 18px;font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums;font-size:.95rem;text-transform:uppercase;letter-spacing:.04em}
+.hint{position:absolute;right:20px;bottom:16px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin:0}
+
+/* marquee */
+.mq{background:var(--amber);color:var(--ink);overflow:hidden;padding-block:13px;white-space:nowrap}
+.mq div{display:inline-block;font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;animation:mq 34s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* hotel reel */
+.hotel{background:var(--ink);color:var(--on-ink)}
+.hotel .lede{color:var(--on-ink-muted)}
+.hotel .kicker{color:var(--amber)}
+.reel-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.arrows{display:flex;gap:10px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:2px solid var(--on-ink);background:transparent;color:var(--on-ink);font-size:1.2rem;cursor:pointer;transition:background .25s,color .25s}
+.arrows button:hover{background:var(--on-ink);color:var(--ink)}
+.reel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-inline:max(20px,calc((100vw - 1080px)/2));padding-bottom:14px;scrollbar-width:none}
+.reel::-webkit-scrollbar{display:none}
+.card{font:inherit;text-align:left;color:var(--on-ink);border:0;cursor:zoom-in;flex:none;width:min(84vw,520px);aspect-ratio:3/2;max-width:100%;scroll-snap-align:center;border-radius:18px;position:relative;overflow:hidden;background:var(--ink2);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;gap:6px;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-8px)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.07)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#07151a55 0,transparent 30%,transparent 45%,#07151aee 100%)}
+.card>span,.card>h3,.card>p{position:relative;z-index:1}
+.card .no{position:absolute;top:18px;left:22px;font-family:var(--display);font-weight:800;font-size:.8rem;letter-spacing:.14em;color:var(--amber)}
+.card .zoom{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--on-ink);color:var(--ink);display:grid;place-items:center;font-size:1rem}
+.card h3{font-size:1.6rem;line-height:.95}
+.card p{font-size:.95rem;color:var(--on-ink)}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1100px);width:100%;color:var(--on-ink)}
+dialog.lb::backdrop{background:#07151af2}
+.lb figure{margin:0;display:flex;flex-direction:column;gap:14px}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:12px;display:block}
+.lb figcaption{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.lb .arrows button{border-color:var(--on-ink);color:var(--on-ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:30px 0 0}
+.chips li,.chips a{border:1.5px solid currentColor;border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:500;text-decoration:none;color:inherit}
+.chips a{color:var(--amber);transition:background .25s,color .25s}
+.chips a:hover{background:var(--amber);color:var(--ink)}
+
+/* places */
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+.places article{display:flex;flex-direction:column;gap:14px;min-width:0}
+.places h2{font-size:clamp(1.9rem,4.6vw,2.7rem)}
+.places p{color:var(--muted);font-size:1.06rem}
+.ph{aspect-ratio:4/3;max-width:100%;border-radius:18px;overflow:hidden;margin-bottom:6px}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.places article:hover .ph img{transform:scale(1.07)}
+
+/* program */
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:18px}
+.day{background:var(--surface);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.day header{display:flex;flex-direction:column;gap:8px}
+.day header span{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lamp)}
+.day h3{font-size:1.7rem}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.tl li{display:grid;grid-template-columns:104px 1fr;gap:10px;align-items:baseline}
+.tl .when{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tl b{font-weight:600}
+#sat-tl{transition:opacity .3s}
+#sat-tl.swap{opacity:0}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick button{font:inherit;font-size:.84rem;font-weight:600;cursor:pointer;border:1.5px solid var(--fg);background:transparent;color:var(--fg);border-radius:999px;padding:7px 14px;transition:background .25s,color .25s,transform .25s}
+.pick button:hover{transform:translateY(-2px)}
+.pick button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.small{font-size:.86rem;color:var(--muted)}
+
+/* route */
+.tline{list-style:none;margin:0;padding:0;max-width:760px;position:relative}
+.tline::before,.tline::after{content:"";position:absolute;left:97px;top:10px;bottom:10px;width:4px;border-radius:2px;background:var(--line)}
+.tline::after{background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform 2.4s cubic-bezier(.3,.6,.2,1)}
+.go .tline::after{transform:scaleY(1)}
+.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 40px}
+.trip{min-width:0;display:flex;flex-direction:column;gap:26px}
+.dir{color:var(--lamp);font-size:.8rem;letter-spacing:.18em}
+.tline li{display:grid;grid-template-columns:80px 1fr;gap:38px;padding-bottom:30px;position:relative}
+.tline li:last-child{padding-bottom:0}
+.tline li::before{content:"";position:absolute;left:90px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:4px solid var(--accent);z-index:1}
+.tline li.alt::before{border-color:var(--lamp);border-style:dashed}
+.tline li.end::before{background:var(--accent)}
+.tline .t{font-family:var(--display);font-stretch:112%;font-weight:850;font-size:1.1rem;white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right;color:var(--fg)}
+.tline li.alt .t{color:var(--muted)}
+.leg{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mode{align-self:flex-start;font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;background:var(--fg);color:var(--bg);border-radius:999px;padding:4px 12px}
+.tline li.alt .mode{background:transparent;color:var(--lamp);border:1.5px dashed var(--lamp)}
+.leg p{color:var(--muted);font-size:.98rem}
+.leg p b{color:var(--fg);font-weight:600}
+
+.tline.wide{max-width:820px}
+.tline.wide li{grid-template-columns:80px 1fr}
+.tot{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.tot li{background:var(--surface);border-radius:999px;padding:9px 18px;font-size:.92rem;color:var(--muted)}
+.tot b{font-family:var(--display);font-weight:800;color:var(--fg);font-variant-numeric:tabular-nums}
+.prof-wrap{overflow-x:auto;margin-bottom:44px}
+.prof{display:block;width:100%;min-width:620px;height:auto;font-family:var(--body);font-size:15px;font-weight:600;fill:var(--fg)}
+.prof .ax{font-size:13px;font-weight:400;fill:var(--muted)}
+.prof .ar{fill:var(--accent);opacity:.12}
+.prof .wk{fill:none;stroke:var(--accent);stroke-width:5;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+.prof .fn{fill:none;stroke:var(--lamp);stroke-width:5;stroke-dasharray:3 9;stroke-linecap:round}
+.prof .dt circle{fill:var(--bg);stroke:var(--accent);stroke-width:4}
+.pre .prof .wk{stroke-dashoffset:1}
+.rv .prof .wk{transition:stroke-dashoffset 2.6s cubic-bezier(.3,.6,.2,1) .2s}
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:2px solid var(--line)}
+details:first-child{border-top:2px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:20px 44px 20px 0;position:relative;font-family:var(--display);font-stretch:108%;font-weight:700;font-size:1.12rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:14px;font-size:1.7rem;font-weight:500;color:var(--accent);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details .a{padding-bottom:22px;display:flex;flex-direction:column;gap:10px;color:var(--muted)}
+details .a b{color:var(--fg);font-weight:600}
+.cost{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.cost li{display:flex;justify-content:space-between;gap:16px;padding-block:9px;border-bottom:1px dashed var(--line)}
+.cost li:last-child{border-bottom:0}
+.cost li.sum{border-top:2px solid var(--fg);margin-top:6px;padding-top:14px;color:var(--fg);font-family:var(--display);font-weight:800;font-size:1.15rem}
+.cost b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sos{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.sos span{background:var(--surface);border-radius:999px;padding:9px 18px;font-size:.9rem}
+.sos b{user-select:all}
+
+footer{background:var(--ink);color:var(--on-ink);padding-block:56px}
+footer .sign{font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;font-size:clamp(1.8rem,6vw,3.4rem);line-height:.96;max-width:none}
+footer .sign span{color:var(--amber)}
+footer p+p{margin-top:16px;font-size:.84rem;color:var(--on-ink-muted)}
+
+.rv{transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{opacity:.25;transform:translateY(26px)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .mq div,.hero .bgimg,.hero .fog{animation:none}
+  .rv,.rv.pre{transition:none;opacity:1;transform:none}
+  .tline::after{transition:none;transform:scaleY(1)} .rv .prof .wk{transition:none}
+  .card,.card img{transition:none}
+}
+@media (max-width:560px){ .hero .wrap{padding-block:84px 40px} }
+/* phone */
+.mode{border-radius:14px}
+@media (max-width:560px){
+  body{font-size:16px}
+  nav .wrap{padding-block:10px;gap:10px}
+  nav b{font-size:.72rem;letter-spacing:.1em}
+  nav ul{flex-wrap:nowrap;gap:12px}
+  nav a{font-size:.8rem;padding-block:6px;display:block}
+  .band{padding-block:52px}
+  .head{margin-bottom:26px}
+  .hero{min-height:500px}
+  .count{gap:6px}
+  .count div{padding:7px 11px;font-size:.76rem;letter-spacing:.02em}
+  .arrows{display:none}
+  .reel{gap:12px}
+  .card{width:84vw;padding:18px}
+  .card h3{font-size:1.35rem}
+  .places{gap:44px}
+  .day{padding:22px}
+  .tl li{grid-template-columns:92px 1fr}
+  .tline::before,.tline::after{left:7px}
+  .tline li,.tline.wide li{display:block;padding-left:34px;padding-bottom:26px}
+  .tline li::before{left:0;top:3px}
+  .tline .t{display:block;text-align:left;font-size:1rem;margin-bottom:6px}
+  .routes{gap:44px}
+  .prof-wrap{overflow:visible;margin-bottom:34px}
+  .prof{min-width:0}
+  .prof .lb{display:none}
+  .prof .ax{font-size:26px}
+  .prof .wk,.prof .fn{stroke-width:8}
+  .prof .dt circle{r:9;stroke-width:6}
+  summary{font-size:1.02rem;padding-block:16px}
+  .cost li{font-size:.95rem}
+  footer{padding-block:44px}
+}
+@media (max-width:360px){ nav b{display:none} nav ul{justify-content:space-between;width:100%} }
+</style>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <b>B·B Awakening</b>
+    <ul><li><a href="#hotel">Hotel</a></li><li><a href="#program">Programme</a></li><li><a href="#route">Route</a></li><li><a href="#faq">FAQ</a></li></ul>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <img class="bgimg" src="img/blackforest.jpg" alt="Black Forest ridges and a dark lake above a sea of fog">
+  <i class="fog" aria-hidden="true"></i><i class="fog f2" aria-hidden="true"></i>
+  <div class="wrap">
+    <p class="to">Alexia, pack a swimsuit.</p>
+    <h1>The Baden-Baden <span>Awakening</span></h1>
+    <p class="sub">Black Forest · Thermal Waters · Medieval &amp; Luxurious Baden · 6–8 November 2026</p>
+    <div class="count" id="count" aria-label="Time until we leave">
+      <div><span id="cd">–</span> days</div><div><span id="ch">–</span> hours</div><div><span id="cm">–</span> min</div><div><span id="cs">–</span> sec</div>
+    </div>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true"><div>Thermal pools · Black Forest · Castle ruins · Steam at dusk · Two nights · Just us · Thermal pools · Black Forest · Castle ruins · Steam at dusk · Two nights · Just us · </div></div>
+
+<section class="band hotel" id="hotel">
+  <div class="wrap">
+    <div class="reel-top rv">
+      <div class="head" style="margin-bottom:0">
+        <span class="kicker">Where we sleep</span>
+        <h2>Badischer Hof</h2>
+        <p class="lede">A former monastery with its own thermal pools, inside and outside. Tap a photo.</p>
+      </div>
+      <div class="arrows"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+    </div>
+  </div>
+  <div class="reel rv" id="reel" tabindex="0" aria-label="Hotel highlights">
+    <button class="card" id="ph-outdoor" data-i="0"><img src="img/outdoor.jpg" alt="Outdoor thermal pool in front of the hotel's white colonnades" loading="lazy"><span class="no">01</span><span class="zoom" aria-hidden="true">⤢</span><h3>Outdoor thermal pool</h3><p>Warm water, cold air, steam.</p></button>
+    <button class="card" id="ph-pool" data-i="1"><img src="img/pool.jpg" alt="Indoor thermal pool with a wooden wave ceiling and glass walls onto the garden" loading="lazy"><span class="no">02</span><span class="zoom" aria-hidden="true">⤢</span><h3>Indoor thermal pool</h3><p>Swim through to the outside.</p></button>
+    <button class="card" id="ph-sauna" data-i="2"><img src="img/sauna.jpg" alt="Glass-walled garden sauna with wooden benches" loading="lazy"><span class="no">03</span><span class="zoom" aria-hidden="true">⤢</span><h3>Sauna</h3><p>Glass walls, garden all around.</p></button>
+    <button class="card" id="ph-room" data-i="3"><img src="img/room.jpg" alt="Hotel room with a large bed and a window onto the trees" loading="lazy"><span class="no">04</span><span class="zoom" aria-hidden="true">⤢</span><h3>Our room</h3><p>Ours for two nights.</p></button>
+    <button class="card" id="ph-gym" data-i="4"><img src="img/gym.jpg" alt="Hotel gym with treadmill, bike and rowing machine by the window" loading="lazy"><span class="no">05</span><span class="zoom" aria-hidden="true">⤢</span><h3>Gym</h3><p>For the morning one of us feels like it.</p></button>
+    <button class="card" id="ph-hotel" data-i="5"><img src="img/hotel.jpg" alt="Hotel Badischer Hof seen from the park" loading="lazy"><span class="no">06</span><span class="zoom" aria-hidden="true">⤢</span><h3>The house</h3><p>White colonnades at the edge of the park.</p></button>
+  </div>
+  <div class="wrap">
+    <ul class="chips rv">
+      <li>Check-in 15:00</li><li>Check-out 12:00</li><li>24 h reception</li><li>Lange Straße 47</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="places">
+      <article class="rv"><div class="ph"><img src="img/town.jpg" alt="Baden-Baden from above: the old town, the river park and forested hills with the castle ruins" loading="lazy"></div><span class="kicker">The town</span><h2>Baden-Baden</h2><p>A spa town since the Romans, dressed up in the 1800s and never changed back. Casino, colonnades and a river park, all inside a ten-minute walk.</p></article>
+      <article class="rv"><div class="ph"><img src="img/blackforest.jpg" alt="Black Forest ridges and a dark lake above a sea of fog" loading="lazy"></div><span class="kicker">The view</span><h2>Black Forest</h2><p>It starts where the streets end. Fir ridges, fog in the valleys, and a 1913 funicular to a summit at 668 m.</p></article>
+      <article class="rv"><div class="ph"><img src="img/castle.jpg" alt="The Altes Schloss castle ruins on a forested hillside above Baden-Baden" loading="lazy"></div><span class="kicker">Also there</span><h2>The rest</h2><p>Castle ruins from 1102 above the town. A waterfall in a mossy valley. Caracalla and the 1877 Friedrichsbad for more water. The Kurhaus casino for one dressed-up evening.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="program">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">The programme</span><h2>Three days</h2></div>
+    <div class="days">
+      <div class="day rv">
+        <header><span>Fri 6 Nov</span><h3>Arrive, sink in</h3></header>
+        <ul class="tl">
+          <li><span class="when">Morning</span><b>Train from Berlin</b></li>
+          <li><span class="when">Afternoon</span><b>Bus 201, check in</b></li>
+          <li><span class="when">Dusk</span><b>First swim, outside</b></li>
+          <li><span class="when">Evening</span><b>Dinner in the old town</b></li>
+        </ul>
+      </div>
+      <div class="day rv">
+        <header><span>Sat 7 Nov</span><h3>The Black Forest day</h3></header>
+        <ul class="tl">
+          <li><span class="when">Morning</span><b>Pool, big breakfast</b></li>
+          <li><span class="when">After breakfast</span><b>Walk up to the castle ruins</b></li>
+          <li><span class="when">Midday</span><b>Battert cliffs, lunch in the gorge</b></li>
+          <li><span class="when">Afternoon</span><b>Forest path to the Merkur</b></li>
+          <li><span class="when">Sunset</span><b>Funicular to the summit</b></li>
+          <li><span class="when">Evening</span><b>Long soak, then dinner</b></li>
+        </ul>
+      </div>
+      <div class="day rv">
+        <header><span>Sun 8 Nov</span><h3>One more hour</h3></header>
+        <ul class="tl">
+          <li><span class="when">Morning</span><b>Last swim, slow breakfast</b></li>
+          <li><span class="when">Late morning</span><b>Lichtentaler Allee walk</b></li>
+          <li><span class="when">Midday</span><b>Check out, bus 201</b></li>
+          <li><span class="when">Afternoon</span><b>Train home</b></li>
+          <li><span class="when">Evening</span><b>Berlin</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="forest">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">Saturday 7 November</span><h2>The Black Forest day</h2><p class="lede">We walk out of the hotel and into the forest. No car. Castle ruins, cliffs, a summit at sunset.</p></div>
+    <ul class="tot rv"><li><b>9 km</b> on foot</li><li><b>≈ 3 h</b> walking</li><li><b>+450 m</b> up</li><li><b>5–6 h</b> with stops</li></ul>
+    <div class="prof-wrap rv"><svg class="prof" viewBox="0 0 980 296" role="img" aria-label="Elevation profile: from 159 m at the Kurhaus up to 488 m at the Battert, down to 283 m at the funicular, then up to 668 m on the Merkur">
+<polygon class="ar" points="40,262 40,229 110,211 348,138 418,114 550,156 612,156 832,186 832,262"/><polyline class="wk" pathLength="1" points="40,229 110,211 348,138 418,114 550,156 612,156 832,186"/><polyline class="fn" points="832,186 938,51"/><g class="dt"><circle cx="40" cy="229" r="6"/><circle cx="110" cy="211" r="6"/><circle cx="348" cy="138" r="6"/><circle cx="418" cy="114" r="6"/><circle cx="550" cy="156" r="6"/><circle cx="832" cy="186" r="6"/><circle cx="938" cy="51" r="6"/></g><g class="lb"><text x="52" y="249" text-anchor="start">Kurhaus</text><text x="110" y="195" text-anchor="middle">Neues Schloss</text><text x="348" y="122" text-anchor="middle">Altes Schloss</text><text x="418" y="98" text-anchor="middle">Battert</text><text x="550" y="140" text-anchor="middle">Wolfsschlucht</text><text x="822" y="210" text-anchor="end">Valley station</text><text x="926" y="35" text-anchor="end">Merkur 668 m</text></g><text class="ax" x="40" y="286" text-anchor="middle">0 km</text><text class="ax" x="304" y="286" text-anchor="middle">3 km</text><text class="ax" x="568" y="286" text-anchor="middle">6 km</text><text class="ax" x="832" y="286" text-anchor="middle">9 km</text></svg></div>
+    <ol class="tline wide" id="waylist">
+      <li><span class="t">0 km</span><div class="leg"><span class="mode">Start · 5 min from the hotel</span><h3>Kurhaus</h3><p><b>The casino colonnade.</b> We set off after breakfast, up through the old town.</p></div></li>
+      <li><span class="t">0.8 km</span><div class="leg"><span class="mode">0.8 km · 15 min</span><h3>Neues Schloss</h3><p><b>The margraves’ later palace.</b> We pass its walls and leave the streets behind.</p></div></li>
+      <li><span class="t">3.5 km</span><div class="leg"><span class="mode">2.7 km · 1 h · the big climb</span><h3>Altes Schloss Hohenbaden</h3><p><b>Castle ruins from 1102.</b> The first seat of the margraves of Baden. We climb the tower for the view over the Rhine valley. Free.</p></div></li>
+      <li><span class="t">4.3 km</span><div class="leg"><span class="mode">0.8 km · 20 min</span><h3>Battertfelsen</h3><p><b>A wall of rock towers above the town.</b> The Ritterplatte viewpoint at 488 m is the highest point on foot and the best spot for photos.</p></div></li>
+      <li><span class="t">5.8 km</span><div class="leg"><span class="mode">1.5 km · 25 min · downhill</span><h3>Wolfsschlucht</h3><p><b>A wooded gorge with places to eat.</b> Lunch.</p></div></li>
+      <li><span class="t">6.5 km</span><div class="leg"><span class="mode">0.7 km · 15 min</span><h3>Teufelskanzel</h3><p><b>The Devil’s Pulpit.</b> A rock ledge looking back over the valley.</p></div></li>
+      <li><span class="t">9 km</span><div class="leg"><span class="mode">2.5 km · 45 min · easy forest path</span><h3>Merkur valley station</h3><p><b>End of the walk.</b> From here the 1913 funicular does the climbing.</p></div></li>
+      <li class="end"><span class="t">668 m</span><div class="leg"><span class="mode">Funicular · 5 min · +370 m</span><h3>Merkur summit</h3><p><b>Baden-Baden’s own mountain.</b> Tower, the whole Rhine plain, sunset around 17:00. Then funicular and bus back to the pool.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band alt" id="route">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">The route</span><h2>Berlin 08:43, hotel by 15:00</h2></div>
+    <div class="routes" id="routelist">
+      <div class="trip rv"><h3 class="dir">Friday 6 Nov · there</h3>
+      <ol class="tline">
+        <li><span class="t">08:43</span><div class="leg"><span class="mode">ICE 371</span><h3>Berlin Hbf → Karlsruhe Hbf</h3><p><b>5 h 18 min.</b> Arrives 14:01.</p></div></li>
+        <li class="alt"><span class="t">14:01</span><div class="leg"><span class="mode">Change</span><h3>Karlsruhe Hbf</h3><p><b>8 min.</b> Miss it and the next train is 30 minutes behind.</p></div></li>
+        <li><span class="t">14:09</span><div class="leg"><span class="mode">RE2 4729</span><h3>Karlsruhe Hbf → Baden-Baden</h3><p><b>19 min.</b> Arrives 14:28.</p></div></li>
+        <li><span class="t">14:28</span><div class="leg"><span class="mode">Bus 201</span><h3>Bahnhof → Hindenburgplatz</h3><p><b>About 15 min.</b> Leaves every 12–15 minutes.</p></div></li>
+        <li class="end"><span class="t">≈15:00</span><div class="leg"><span class="mode">Arrived</span><h3>Badischer Hof</h3><p>Check-in opens at 15:00. Swimsuit, pool.</p></div></li>
+      </ol></div>
+      <div class="trip rv"><h3 class="dir">Sunday 8 Nov · back</h3>
+      <ol class="tline">
+        <li><span class="t">12:00</span><div class="leg"><span class="mode">Check out</span><h3>Badischer Hof</h3><p>Bags can wait at reception.</p></div></li>
+        <li><span class="t">≈12:50</span><div class="leg"><span class="mode">Bus 201</span><h3>Hindenburgplatz → Bahnhof</h3><p><b>About 15 min.</b> Leaves every 12–15 minutes.</p></div></li>
+        <li><span class="t">13:28</span><div class="leg"><span class="mode">RE2 4720</span><h3>Baden-Baden → Karlsruhe Hbf</h3><p><b>About 19 min.</b></p></div></li>
+        <li class="alt"><span class="t">≈13:47</span><div class="leg"><span class="mode">Change</span><h3>Karlsruhe Hbf</h3><p>Onto ICE 370 to Berlin.</p></div></li>
+        <li class="end"><span class="t">19:17</span><div class="leg"><span class="mode">Arrived</span><h3>Berlin Hbf</h3><p>Home.</p></div></li>
+      </ol></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">FAQ</span><h2>What if</h2></div>
+    <div class="faq rv">
+      <details open><summary>What does it cost?</summary><div class="a">
+        <ul class="cost">
+          <li><span>Hotel, two nights</span><b>≈ €550</b></li>
+          <li><span>Trains, Berlin and back</span><b>≈ €360</b></li>
+          <li><span>Buses in Baden-Baden</span><b>≈ €25</b></li>
+          <li class="sum"><span>Total for the two of us</span><b>≈ €935</b></li>
+        </ul>
+        <p>Hotel and transport only. Food and extra sights come on top.</p>
+      </div></details>
+      <details><summary>What if we miss the train in Berlin?</summary><div class="a"><p>ICE 371 leaves at 08:43. The next direct one is <b>two hours later</b>. A flexible ticket is valid on it. A saver ticket is tied to one train, so we leave home early.</p></div></details>
+      <details><summary>What if the train is late or cancelled?</summary><div class="a"><p>If we would arrive <b>20 minutes or more late</b>, we may take any other train on the route. 60 minutes late means 25% of the fare back, 120 minutes means 50%.</p></div></details>
+      <details><summary>What if we miss the 8-minute change in Karlsruhe?</summary><div class="a"><p>Trains to Baden-Baden leave about <b>every 30 minutes</b> and take 15 to 30 minutes. We arrive half an hour later, still in time for the pool.</p></div></details>
+      <details><summary>What if we miss the ICE home on Sunday?</summary><div class="a"><p>The next direct ICE from Karlsruhe to Berlin leaves <b>two hours later</b>. If a late regional train caused it, our ticket is valid on that one.</p></div></details>
+      <details><summary>What if we miss the bus?</summary><div class="a"><p>The next 201 comes in <b>12 to 15 minutes</b>, until around midnight. Taxis wait outside the station. It is 7 km to the centre.</p></div></details>
+      <details><summary>What if it rains on Saturday?</summary><div class="a"><p>Light rain: we walk to the castle ruins and back, <b>about 7 km</b>, and skip the rest. Heavy rain: spa day. Caracalla is open 08:00–22:00 and thermal pools are better in the rain.</p></div></details>
+      <details><summary>What if the summit is in fog?</summary><div class="a"><p>We check the summit webcam at breakfast. No view means no funicular: we end the walk at the valley station and take the bus back. The funicular normally runs 10:00–22:00.</p></div></details>
+      <details><summary>What if the hike is too much?</summary><div class="a"><p>We can turn around at the castle or the Battert and walk back down, <b>3.5 to 4.3 km</b>, all downhill. The second half after lunch is the easy part.</p></div></details>
+      <details><summary>What if Friedrichsbad is half closed?</summary><div class="a"><p>Its domed pool has been under renovation this year. If it still is, we skip it. Caracalla is next door and uses the same water.</p></div></details>
+      <details><summary>Swimsuit or not?</summary><div class="a"><p>Swimsuit in the hotel pools and the Caracalla pools. Caracalla's sauna level is textile-free. Friedrichsbad is textile-free except <b>Wednesday and Saturday</b>.</p></div></details>
+      <details><summary>What if one of us feels unwell?</summary><div class="a"><p>Thermal water is hot. We drink water and take a break every 20 minutes. Reception is staffed all night.</p></div></details>
+      <details><summary>What do I pack?</summary><div class="a"><p>Swimsuit, flip-flops, shoes with grip, a warm layer for the summit, a rain jacket, one nice outfit, ID.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<dialog class="lb" id="lb" aria-label="Photo preview">
+  <figure>
+    <img id="lb-img" src="img/outdoor.jpg" alt="">
+    <figcaption><span id="lb-cap"></span><span class="arrows"><button id="lb-prev" aria-label="Previous photo">←</button><button id="lb-next" aria-label="Next photo">→</button><button id="lb-close" aria-label="Close">✕</button></span></figcaption>
+  </figure>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <p class="sign">See you on <span>the platform.</span></p>
+    <p>Alex · prices and timetables checked 5 October 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var IO = 'IntersectionObserver' in window;
+
+  /* countdown to Fri 6 Nov 2026, 00:00 Berlin (CET) */
+  var target = Date.UTC(2026,10,5,23,0,0);
+  function tick(){
+    var ms = target - Date.now(), box = document.getElementById('count');
+    if(ms <= 0){ box.innerHTML = '<div>We are on our way</div>'; return; }
+    var m = Math.floor(ms/60000);
+    document.getElementById('cd').textContent = Math.floor(m/1440);
+    document.getElementById('ch').textContent = Math.floor(m%1440/60);
+    document.getElementById('cm').textContent = m%60;
+    document.getElementById('cs').textContent = Math.floor(ms/1000)%60;
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* hotel reel arrows */
+  var reel = document.getElementById('reel');
+  function step(d){ reel.scrollBy({left:d*Math.min(540, reel.clientWidth*.85), behavior: reduce ? 'auto':'smooth'}); }
+  document.getElementById('prev').addEventListener('click', function(){ step(-1); });
+  document.getElementById('next').addEventListener('click', function(){ step(1); });
+
+  /* photo preview */
+  var lb=document.getElementById('lb'), cards=[].slice.call(reel.querySelectorAll('.card')), cur=0;
+  function show(i){ cur=(i+cards.length)%cards.length; var im=cards[cur].querySelector('img');
+    document.getElementById('lb-img').src=im.src; document.getElementById('lb-img').alt=im.alt;
+    document.getElementById('lb-cap').textContent=cards[cur].querySelector('h3').textContent; }
+  reel.addEventListener('click', function(e){ var c=e.target.closest('.card'); if(!c) return; show(+c.dataset.i); if(lb.showModal) lb.showModal(); else lb.setAttribute('open',''); });
+  document.getElementById('lb-prev').addEventListener('click', function(){ show(cur-1); });
+  document.getElementById('lb-next').addEventListener('click', function(){ show(cur+1); });
+  document.getElementById('lb-close').addEventListener('click', function(){ lb.close(); });
+  lb.addEventListener('click', function(e){ if(e.target===lb) lb.close(); });
+  lb.addEventListener('keydown', function(e){ if(e.key==='ArrowLeft') show(cur-1); if(e.key==='ArrowRight') show(cur+1); });
+
+  /* reveals, route line, stat count-up */
+  var routeEl = document.getElementById('routelist'), wayEl = document.getElementById('waylist');
+  if(!reduce && IO){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.remove('pre'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('pre'); io.observe(el); } });
+    new IntersectionObserver(function(e,o){ if(e[0].isIntersecting){ routeEl.classList.add('go'); o.disconnect(); } },{threshold:.3}).observe(routeEl);
+    document.querySelectorAll('[data-n-unused]').forEach(function(el){
+      new IntersectionObserver(function(e,o){ if(!e[0].isIntersecting) return; o.disconnect(); var n=+el.dataset.n, s=performance.now();
+        (function up(now){ var p=Math.min((now-s)/1400,1); el.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(up); })(s);
+      },{threshold:.8}).observe(el);
+    });
+    new IntersectionObserver(function(e,o){ if(e[0].isIntersecting){ wayEl.parentNode.classList.add('go'); o.disconnect(); } },{threshold:.15}).observe(wayEl);
+  } else { routeEl.classList.add('go'); wayEl.parentNode.classList.add('go'); }
+
+})();
+</script>
+
+</body></html>
